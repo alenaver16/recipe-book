@@ -100,12 +100,13 @@ class RecipeController extends Controller
         ]);;
 
         $recipe->update($request->all());
-        foreach ($request['ingridient'] as $ingridient){
-            $item->recipe_id = $recipe->id;
-            $item->ingridient_id = $ingridient['ingridient_id'];
-            $item->count = $ingridient['count'];
-            RecipeIngrigient::update($item->attributesToArray());
-        }
+//        $item = RecipeIngrigient::
+//        foreach ($request['ingridient'] as $ingridient){
+//            $item->recipe_id = $recipe->id;
+//            $item->ingridient_id = $ingridient['ingridient_id'];
+//            $item->count = $ingridient['count'];
+//            RecipeIngrigient::update($item->attributesToArray());
+//        }
         return redirect()->route('recipes.index')
             ->with('success','Recipe updated successfully');
     }
