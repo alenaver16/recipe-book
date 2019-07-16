@@ -13,7 +13,7 @@ class Recipe extends Model
     ];
 
     public function ingridients() {
-        return $this->belongsToMany('App\Ingridient', 'recipe_ingridient', 'recipe_id', 'ingridient_id');
+        return $this->belongsToMany('App\Ingridient', 'recipe_ingridient', 'recipe_id', 'ingridient_id')->withPivot('count');
 //        return $this->belongsToMany('App\RecipeIngrigient');
     }
 }

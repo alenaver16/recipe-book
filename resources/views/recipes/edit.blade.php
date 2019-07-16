@@ -39,6 +39,27 @@
                     <textarea class="form-control" style="height:150px" name="description" placeholder="Описание">{{ $recipe->description }}</textarea>
                 </div>
             </div>
+            @if ($recipe->ingridients())
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong class="font-size-24">Ингредиенты:</strong>
+                        <table class="full-width-table">
+                            <?php $i=0; ?>
+                            @foreach ($recipe->ingridients()->get() as $ingridient)
+                                <tr class="bordered-tr">
+                                    <td><select class="form-control select-box-container"
+                                                name="ingridient[1][ingridient_id]">
+                                            @foreach(\App\Ingridient::all() as $ingr)
+                                                <option value="{{$ingr->id}}" <?= $ingr->name == $ingridient->name ?  'selected = "selected"' : '' ?>>{{$ingr->name}}</option>
+                                            @endforeach
+                                        </select></td>
+                                    <td><input class="form-control ml-10 mr-10" name="ingridient[{{++$i}}][count]" value="{{ $ingridient->pivot->count }}" ></td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            @endif
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Сохранить рецепт</button>
             </div>

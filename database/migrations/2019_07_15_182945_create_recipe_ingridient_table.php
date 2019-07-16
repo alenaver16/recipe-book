@@ -23,6 +23,7 @@ class CreateRecipeIngridientTable extends Migration
                 ->references('id')->on('ingridients')
                 ->onDelete('cascade');
             $table->double('count')->unsigned();
+            $table->timestamps();
         });
     }
 

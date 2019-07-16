@@ -1,0 +1,30 @@
+.ingridients-row{
+    display: flex;
+    margin-top: 10px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+}
+
+.font-size-24 {
+    font-size: 24px;
+}
+
+.bordered-tr {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+.full-width-table {
+    font-size: 20px;
+    width: 100%;
+}

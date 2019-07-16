@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('ingridients','IngridientController');
 Route::resource('recipes','RecipeController');
+Route::post('recipes/create-ingridient', 'RecipeController@createIngridient');
